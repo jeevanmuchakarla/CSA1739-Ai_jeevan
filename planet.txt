@@ -1,0 +1,62 @@
+% Define basic facts about planets
+planet(mercury).
+planet(venus).
+planet(earth).
+planet(mars).
+planet(jupiter).
+planet(saturn).
+planet(uranus).
+planet(neptune).
+
+% Define facts about moons
+has_moons(earth).
+has_moons(mars).
+has_moons(jupiter).
+has_moons(saturn).
+
+% Define facts about planet sizes (diameter in kilometers)
+size(mercury, 4879).
+size(venus, 12104).
+size(earth, 12742).
+size(mars, 6779).
+size(jupiter, 139820).
+size(saturn, 116460).
+size(uranus, 50724).
+size(neptune, 49244).
+
+% Define facts about planet distances from the Sun (in million kilometers)
+distance_from_sun(mercury, 57.9).
+distance_from_sun(venus, 108.2).
+distance_from_sun(earth, 149.6).
+distance_from_sun(mars, 227.9).
+distance_from_sun(jupiter, 778.3).
+distance_from_sun(saturn, 1427).
+distance_from_sun(uranus, 2871).
+distance_from_sun(neptune, 4497.1).
+
+% Define a simple rule to check if a planet has moons
+planet_with_moons(Planet) :-
+    has_moons(Planet).
+
+% Example queries:
+% ?- planet(X).
+% X = mercury ;
+% X = venus ;
+% X = earth ;
+% X = mars ;
+% X = jupiter ;
+% X = saturn ;
+% X = uranus ;
+% X = neptune.
+
+% ?- planet_with_moons(X).
+% X = earth ;
+% X = mars ;
+% X = jupiter ;
+% X = saturn.
+
+% ?- size(earth, Diameter).
+% Diameter = 12742.
+
+% ?- distance_from_sun(mars, Distance).
+% Distance = 227.9.
